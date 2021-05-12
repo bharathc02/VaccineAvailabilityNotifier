@@ -8,11 +8,11 @@ let nodemailerTransporter = nodemailer.createTransport({
     }
 });
 
-exports.sendEmail = function (email, subjectLine, body) {
+exports.sendEmail = function (email, toEmail, subjectLine, body) {
 
     let options = {
-        from: String('Vaccine Checker ' + process.env.EMAIL),
-        to: email,
+        from: String('Vaccine Checker ' + email),
+        to: toEmail,
         subject: subjectLine,
         html: body
     };
